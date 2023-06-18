@@ -1,8 +1,13 @@
 //
-//  File.swift
-//  
+//  APIMethod.swift
 //
-//  Created by user on 07.06.2023.
+//  Created by Oleg Ben.
 //
 
 import Foundation
+
+// MARK: APIMethod
+/// Доступные методы запросов к API
+enum APIMethod: String {
+    case get = "GET"
+}
