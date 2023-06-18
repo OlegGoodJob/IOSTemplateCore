@@ -9,7 +9,7 @@ import Combine
 
 // MARK: APINetwork
 /// Протокол менеджера для выполнения запросов
-protocol APINetwork {
+public protocol APINetwork {
     /// Метод выполнения запроса с парсом ответа в предоставленную модель данных
     /// - Parameters:
     ///   - gateway: Gateway
@@ -19,7 +19,7 @@ protocol APINetwork {
 
 // MARK: APINetworkImpl
 /// Реализация менеджера для выполнения запросов
-final class APINetworkImpl: APINetwork {
+public final class APINetworkImpl: APINetwork {
     /// Менеджер запроса
     private var urlSession = URLSession(configuration: .default)
     /// Кэширование изображений
@@ -31,7 +31,7 @@ final class APINetworkImpl: APINetwork {
     ///   - gateway: Gateway
     ///   - model: Модель данных
     /// - Returns: Future<Результат, Ошибка>
-    func request<M: Codable>(gateway: Gateway, model: M.Type) -> Future<M, Error> {
+    public func request<M: Codable>(gateway: Gateway, model: M.Type) -> Future<M, Error> {
         return Future { [weak self] (promise) in
             guard let _self = self,
                   var urlComponents = URLComponents(string: gateway.apiVersion + gateway.url) else {

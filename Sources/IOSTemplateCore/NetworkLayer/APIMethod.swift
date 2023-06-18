@@ -8,6 +8,6 @@ import Foundation
 
 // MARK: APIMethod
 /// Доступные методы запросов к API
-enum APIMethod: String {
+public enum APIMethod: String {
     case get = "GET"
 }

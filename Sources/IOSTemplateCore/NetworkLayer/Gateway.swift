@@ -7,7 +7,7 @@
 import Foundation
 
 // MARK: Gateway
-protocol Gateway {
+public protocol Gateway {
     /// Ссылка
     var url: String { get }
     /// Метод
